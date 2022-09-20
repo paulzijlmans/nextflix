@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -31,7 +32,14 @@ export default function NavBar(props) {
       <div className={styles.wrapper}>
         <Link href='/'>
           <a className={styles.logoLink}>
-            <div className={styles.logoWrapper}>Netflix</div>
+            <div className={styles.logoWrapper}>
+              <Image
+                src='/static/netflix.svg'
+                alt='Netflix logo'
+                width='128px'
+                height='34px'
+              />
+            </div>
           </a>
         </Link>
 
@@ -48,6 +56,12 @@ export default function NavBar(props) {
           <div>
             <button className={styles.usernameBtn} onClick={handleShowDropdown}>
               <p className={styles.username}>{username}</p>
+              <Image
+                src='/static/expand_more.svg'
+                alt='Expand more'
+                width='24px'
+                height='24px'
+              />
             </button>
             {showDropdown && (
               <div className={styles.navDropdown}>
