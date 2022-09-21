@@ -2,11 +2,24 @@ import Head from 'next/head';
 
 import Banner from '../components/banner/banner';
 import Card from '../components/card/card';
+import SectionCards from '../components/card/section-cards';
 import NavBar from '../components/nav/nav-bar';
 
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  const disneyVideos = [
+    {
+      imageUrl: '/static/clifford.webp',
+    },
+    {
+      imageUrl: '/static/clifford.webp',
+    },
+    {
+      imageUrl: '/static/clifford.webp',
+    },
+  ];
+
   return (
     <div className={styles.container}>
       <Head>
@@ -21,9 +34,10 @@ export default function Home() {
         subTitle='a very cute dog'
         imgUrl='/static/clifford.webp'
       />
-      <Card imgUrl='/static/clifford.webp' size='large' />
-      <Card size='medium' />
-      <Card imgUrl='/static/clifford.webp' size='small' />
+      <div className={styles.sectionWrapper}>
+        <SectionCards title='Disney' videos={disneyVideos} size='large' />
+        <SectionCards title='Disney' videos={disneyVideos} size='medium' />
+      </div>
     </div>
   );
 }
