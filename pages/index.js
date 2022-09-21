@@ -8,9 +8,7 @@ import { getVideos } from '../lib/videos';
 
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
-  const disneyVideos = getVideos();
-
+export default function Home({ disneyVideos }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -31,4 +29,12 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const disneyVideos = getVideos();
+
+  return {
+    props: { disneyVideos },
+  };
 }
