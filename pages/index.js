@@ -4,21 +4,12 @@ import Banner from '../components/banner/banner';
 import Card from '../components/card/card';
 import SectionCards from '../components/card/section-cards';
 import NavBar from '../components/nav/nav-bar';
+import { getVideos } from '../lib/videos';
 
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const disneyVideos = [
-    {
-      imageUrl: '/static/clifford.webp',
-    },
-    {
-      imageUrl: '/static/clifford.webp',
-    },
-    {
-      imageUrl: '/static/clifford.webp',
-    },
-  ];
+  const disneyVideos = getVideos();
 
   return (
     <div className={styles.container}>
