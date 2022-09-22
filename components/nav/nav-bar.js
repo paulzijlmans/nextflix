@@ -5,9 +5,7 @@ import { useState } from 'react';
 
 import styles from './nav-bar.module.css';
 
-export default function NavBar(props) {
-  const { username } = props;
-
+export default function NavBar({ username }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const router = useRouter();

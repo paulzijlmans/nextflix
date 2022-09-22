@@ -7,7 +7,7 @@ export default function SectionCards({ title, videos = [], size }) {
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.cardWrapper}>
         {videos.map((video, idx) => (
-          <Card key={idx} imageUrl={video.imageUrl} size={size} />
+          <Card key={idx} id={idx} imageUrl={video.imageUrl} size={size} />
         ))}
       </div>
     </section>
