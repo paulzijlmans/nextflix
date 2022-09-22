@@ -8,19 +8,19 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    async function handleLoggedIn() {
-      const magicClient = getMagicClient();
-      const isLoggedIn = await magicClient.user.isLoggedIn();
-      if (isLoggedIn) {
-        router.push('/');
-      } else {
-        router.push('/login');
-      }
-    }
-    handleLoggedIn();
+    // async function handleLoggedIn() {
+    //   const magicClient = getMagicClient();
+    //   const isLoggedIn = await magicClient.user.isLoggedIn();
+    //   if (isLoggedIn) {
+    //     router.push('/');
+    //   } else {
+    //     router.push('/login');
+    //   }
+    // }
+    // handleLoggedIn();
   }, []);
 
   useEffect(() => {
